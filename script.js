@@ -94,9 +94,6 @@ function handleGenerateBill() {
         console.log('(Demo mode) Bill recorded:', bill);
     }
 
-    // ==========================
-    // RESET FORM FOR NEXT USER
-    // ==========================
     customerName.value = '';
     consumption.value = '';
     customerType.selectedIndex = 0; // Reset dropdown to first option

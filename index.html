@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Statement</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+    <div class="header">
+        <h1><i data-lucide="droplets"></i> MINERAL.co</h1>
+        <div class="counter-badge">
+             <span id="transactionCounter">0</span>
+        </div>
+    </div>
+
+    <div class="field">
+        <label>CUSTOMER NAME</label>
+        <input type="text" id="customerName" placeholder="Enter full name">
+    </div>
+    <div class="field">
+        <label>CONSUMPTION (m³)</label>
+        <input type="number" id="consumption" placeholder="Enter water consumption" min="0" step="0.1">
+    </div>
+    <div class="field">
+        <label>CUSTOMER TYPE</label>
+        <select id="customerType">
+            <option value="Regular">Regular (0% discount)</option>
+            <option value="Senior Citizen">Senior Citizen (25% off)</option>
+            <option value="Solo Parent">Solo Parent (15% off)</option>
+        </select>
+    </div>
+
+    <button class="btn-generate" id="generateBtn">
+        <i data-lucide="calculator"></i> GENERATE BILL
+    </button>
+
+    <div id="billOutput" class="bill-output" style="display:none;"></div>
+    
+    <div class="recorded-badge">
+         Recorded to Google Sheets: <span id="recordedCount">0</span> transactions
+    </div>
+
+    <div class="rate-info">
+        <div><strong>1-20 m³</strong> → ₱25.00/m³</div>
+        <div><strong>21-40 m³</strong> → ₱35.00/m³</div>
+        <div><strong>41-60 m³</strong> → ₱45.00/m³</div>
+        <div><strong>Above 60 m³</strong> → ₱60.00/m³</div>
+    </div>
+
+    <div class="disclaimer">All transactions are automatically recorded to Google Sheets</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
